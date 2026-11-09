@@ -1,0 +1,29 @@
+{
+  "name": "disuruhsuruh-server",
+  "version": "1.0.0",
+  "description": "Backend API for disuruhsuruh UMKM service platform",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "migrate": "node src/db/migrate.js",
+    "encrypt:refund-data": "node src/db/encrypt-refund-data.js",
+    "seed": "node src/db/seed.js",
+    "test": "node --test test/**/*.test.js"
+  },
+  "dependencies": {
+    "axios": "^1.7.9",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "joi": "^17.13.3",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "nanoid": "^5.0.9",
+    "pg": "^8.13.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
