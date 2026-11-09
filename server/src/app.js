@@ -37,6 +37,9 @@ if (process.env.NODE_ENV !== 'test') {
   app.use(morgan('dev'));
 }
 
+// Health check endpoint for Render & cloud monitors
+app.get('/healthz', (req, res) => res.status(200).json({ status: 'ok' }));
+
 // Routes
 app.use('/api/v1', healthRoutes);
 app.use('/api/v1', pricingRoutes);
