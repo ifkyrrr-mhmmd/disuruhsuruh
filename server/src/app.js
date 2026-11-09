@@ -23,7 +23,7 @@ const allowedOrigins = (process.env.FRONTEND_URL || 'http://localhost:5173')
   .split(',').map((origin) => origin.trim()).filter(Boolean);
 app.use(cors({
   origin(origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) return callback(null, true);
+    if (!origin || allowedOrigins.includes('*') || allowedOrigins.includes(origin)) return callback(null, true);
     const error = new Error('Origin tidak diizinkan oleh kebijakan CORS.');
     error.statusCode = 403;
     return callback(error);
